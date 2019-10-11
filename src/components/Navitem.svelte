@@ -33,10 +33,6 @@
 	li a:hover {
 		color: #fff;
 	}
-	li.active a {
-		text-decoration: underline;
-		color: #000;
-	}
 </style>
 
 <li>

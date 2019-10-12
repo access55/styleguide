@@ -1,21 +1,34 @@
 <script>
-	import Section from "./Section.svelte";
+	export let data;
+
 </script>
+
 <style>
-.icons {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-}
+	.icons > .item {
+		margin-bottom: 20px;
+	}
+
+	.icons > .item > .name {
+		font-size: 18px;
+	}
+
+	.icons > .item > .purpose {
+		font-size: 14px;
+	}
+
 </style>
-<Section
-	target="icons"
-	title="Icones">
-	<div class="icons">
-		<!-- {#each colorsArr as color}
-			<div class="item">
-				<Color {color} />
+
+<div class="icons">
+	{#each data as icon}
+		<div class="item">
+			<div class="name">
+				<a href={icon.source} target="_blank">
+					{icon.name}
+				</a>
 			</div>
-		{/each} -->
-	</div>
-</Section>
+			<div class="purpose">
+				{icon.purpose}
+			</div>
+		</div>
+	{/each}
+</div>

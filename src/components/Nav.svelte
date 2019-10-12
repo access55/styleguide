@@ -1,15 +1,14 @@
 <script>
 	import { setContext } from 'svelte';
+	import { version } from '../../package.json';
 
 	export let logo;
 	export let website;
+
 </script>
+
 <style>
 	header {
-		position: fixed;
-		top: 0;
-		left: 0;
-		bottom: 0;
 		width: 100vw;
 		height: var(--nav-h);
 		padding: 0 10px;
@@ -30,10 +29,28 @@
 	nav > a {
 		flex: 0 80px;
 		height: 32px;
-		margin-right: auto;
+		margin-right: 4px;
 		color: transparent;
 		background-repeat: no-repeat;
 		background-size: contain;
+	}
+	nav > h1 {
+		position: relative;
+		top: 2px;
+		flex: 0 auto;
+		line-height: 1;
+		margin-right: 0;
+		margin-left: auto;
+		color: #fff;
+		font-weight: normal;
+		text-transform: uppercase;
+		font-size: 12px;
+		letter-spacing: 1px;
+	}
+	nav > h1 > small {
+		font-size: 10px;
+		opacity: 0.6;
+		text-transform: lowercase;
 	}
 	nav > ul {
 		list-style: none;
@@ -44,7 +61,23 @@
 		flex: 0.75;
 		text-align: center;
 		max-width: 480px;
+		display: none;
 	}
+	@media only screen and (min-width: 760px) {
+		header {
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+		nav > h1 {
+			margin-right: auto;
+			margin-left: 0;
+		}
+		nav > ul {
+			display: flex;
+		}
+	}
+
 </style>
 
 <header>
@@ -52,10 +85,11 @@
 		<a
 			href={website}
 			title="Website"
+			target="_blank"
 			style="background-image: url({logo})">
 			{website}
 		</a>
-
+		<h1>Styleguide <small>v{version}</small></h1>
 		<ul>
 			<slot></slot>
 		</ul>

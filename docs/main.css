@@ -44,13 +44,22 @@ a {
 	font-family: var(--font);
 	text-decoration: none;
 	cursor: pointer;
-	color: inherit;
+	color: var(--primary);
 }
 
-a:hover, a:active { color: var(--primary) }
-a:focus { outline: none }
+a:hover,
+a:active {
+	color: var(--primary)
+}
+
+a:visited {
+	color: var(--secondary)
+}
+
+a:focus {
+	outline: none
+}
 
 ::selection {
-	background: var(--primary);
-	color: white;
+	background: rgba(0, 150, 255, 0.45);
 }

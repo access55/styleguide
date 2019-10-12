@@ -1,18 +1,10 @@
 <script>
-	import { hexToRgb } from '../utils';
-
-	export let color;
-
-	const rgb = function(hex) {
-		const { r, g, b } = hexToRgb(hex);
-		const str = `rgb(${[r,g,b].join(',')})`;
-		return str;
-	};
+	export let family;
 
 </script>
 
 <style>
-	.color {
+	.family {
 		height: 100%;
 		width: 100%;
 
@@ -22,11 +14,10 @@
 		align-items: center;
 		text-align: center;
 	}
-	.color * {
+	.family * {
 		pointer-events: none;
 	}
-
-	.color span {
+	.family span {
 		position: absolute;
 		opacity: 0;
 		left: 75%;
@@ -38,11 +29,13 @@
 		transition: all 0.3s ease-in;
 		text-transform: uppercase;
 	}
-
-	.color span.clipboard:nth-of-type(2) {
+	.family span a {
+		color: #fff;
+	}
+	.family span.clipboard {
 		left: 25%;
 	}
-	.color span.copied {
+	.family span.copied {
 		left: 50%;
 		opacity: 0;
 	}
@@ -56,15 +49,19 @@
 		opacity: 1 !important;
 		transform: translate(-50%, 0px);
 	}
-	.color span:hover {
+	.family span:hover {
 		text-decoration: underline;
 	}
-	.color:hover span:not(.copied) {
+	.family:hover span:not(.copied) {
 		opacity: 1;
 		transform: translate(-50%, 0px);
 		pointer-events: all;
 	}
-	.color::before {
+	.family:hover span:not(.copied) a {
+		pointer-events: all;
+	}
+
+	.family::before {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -78,9 +75,11 @@
 		opacity: 0;
 		transition: opacity 0.3s 0.1s ease;
 	}
-	.color:hover::before {
+
+	.family:hover::before {
 		opacity: 0.75;
 	}
+
 	.name {
 		position: absolute;
 		left: 50%;
@@ -88,25 +87,28 @@
 		text-transform: uppercase;
 		font-weight: bold;
 		letter-spacing: 1px;
+		width: 100%;
 	}
+	.name small {
+		font-size: 8px;
+		opacity: 0.75;
+	}
+
 </style>
 
-<div
-	class="color"
-	style='
-		background-color: {color.hex};
-		color: {color.color};
-	'>
-
-	<div class="name">{ color.name }</div>
+<div class="family">
+	<div class="name">
+		{family.name}<br/>
+		<small>({family.desc})</small>
+	</div>
 
 	<span
-		data-clipboard-text={color.hex}
-		class="clipboard">hex</span>
+		class="clipboard"
+		data-clipboard-text={family.name}>copiar</span>
 
-	<span
-		data-clipboard-text={rgb(color.hex)}
-		class="clipboard">rgb</span>
+	<span>
+		<a href={family.href} target="_blank">ver</a>
+	</span>
 
 	<span class="copied">copiado!</span>
 </div>

@@ -14,14 +14,14 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'docs/bundle.js'
+		file: 'dist/bundle.js'
 	},
 	plugins: [
 		json(),
 		svelte({
 			dev: !production,
 			css: css => {
-				css.write('docs/bundle.css');
+				css.write('dist/bundle.css');
 			}
 		}),
 		resolve({
@@ -29,7 +29,7 @@ export default {
 			dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
 		}),
 		commonjs(),
-		!production && livereload('docs'),
+		!production && livereload('dist'),
 		production && terser()
 	],
 	watch: {

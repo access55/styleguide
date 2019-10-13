@@ -19,9 +19,10 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "deploy": "s3-deploy './dist/**' --cwd '.' --region sa-east-1 --bucket styleguide.a55.tech --distId E2BBXPLST3A1TW --invalidate '/*'",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
-    "start": "sirv docs --single",
-    "start:dev": "sirv docs --single --dev"
+    "start": "sirv dist --single",
+    "start:dev": "sirv dist --single --dev"
   }
 }

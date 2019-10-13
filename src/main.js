@@ -102,7 +102,7 @@ const domains = [{
 }, {
 	name: 'Assinatura de email',
 	gifs: '',
-	domain: 'https://email-signature.a55.tech'
+	domain: 'https://access55.github.io/email-signature'
 }];
 
 const props = {

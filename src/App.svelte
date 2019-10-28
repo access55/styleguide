@@ -1,45 +1,47 @@
 <script>
-	import Colors from './components/Colors.svelte';
-	import Icons from './components/Icons.svelte';
-	import Images from './components/Images.svelte';
+	import Media from './components/Media.svelte';
+	import Palette from './components/Palette.svelte';
+	import Typography from './components/Typography.svelte';
+	import UIIcons from './components/UIIcons.svelte';
+	import Resources from './components/Resources.svelte';
+
 	import Nav from './components/Nav.svelte';
 	import Navitem from './components/Navitem.svelte';
-	import Domains from './components/Domains.svelte';
-	import Section from './components/Section.svelte';
-	import Typography from './components/Typography.svelte';
 
-	export let menu;
-	export let images;
-	export let colors;
+	import Section from './components/Section.svelte';
+
+	export let nav;
+	export let media;
+	export let palette;
 	export let typography;
-	export let icons;
-	export let domains;
+	export let ui_icons;
+	export let resources;
 
 	const main = [{
-		component: Images,
-		data: images,
-		title: 'Imagens',
-		target: 'images'
+		component: Media,
+		data: media,
+		title: 'Media',
+		target: 'media'
 	}, {
-		component: Colors,
-		data: colors,
-		title: 'Cores',
-		target: 'colors'
+		component: Palette,
+		data: palette,
+		title: 'Palette',
+		target: 'palette'
 	}, {
 		component: Typography,
 		data: typography,
-		title: 'Tipografia',
+		title: 'Typography',
 		target: 'typography'
 	}, {
-		component: Icons,
-		data: icons,
-		title: 'Ícones',
-		target: 'icons'
+		component: UIIcons,
+		data: ui_icons,
+		title: 'UI Icons',
+		target: 'ui-icons'
 	}, {
-		component: Domains,
-		data: domains,
-		title: 'Domínios',
-		target: 'domains'
+		component: Resources,
+		data: resources,
+		title: 'Resources',
+		target: 'resources'
 	}];
 
 </script>
@@ -70,12 +72,12 @@
 
 <div class="styleguide">
  	<Nav
-	 	website={domains[0].domain}
-	 	logo={images[3].src}>
-	 	{#each menu as item}
+	 	website={resources[0].domain}
+	 	logo={media[3].src}>
+	 	{#each nav as navitem}
 			<Navitem
-				path={item.target}>
-				{item.name}
+				path={navitem.target}>
+				{navitem.name}
 			</Navitem>
 		{/each}
 	</Nav>

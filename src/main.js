@@ -1,85 +1,149 @@
 import App from './App.svelte';
 import './utils';
 
-const menu = [{
-	target: 'images',
-	name: 'Imagens'
+const nav = [{
+	target: 'media',
+	name: 'Media'
 }, {
-	target: 'colors',
-	name: 'Cores'
+	target: 'palette',
+	name: 'Palette'
 }, {
 	target: 'typography',
-	name: 'Tipografia'
+	name: 'Typography'
 }, {
-	target: 'icons',
-	name: 'Ícones'
+	target: 'ui-icons',
+	name: 'UI Icons'
 }, {
-	target: 'domains',
-	name: 'Domínios'
+	target: 'resources',
+	name: 'Resources'
 }];
 
-const images = [{
-	src: 'https://cdn-a55.s3-sa-east-1.amazonaws.com/a55_logo_99x43_2019.png',
-	filename: 'logo-a55.png',
-	alt: 'Logo A55',
+const media = [{
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/MODELO+APRESENTAC%CC%A7A%CC%83O/A55_Modelo+de+Apresentac%CC%A7a%CC%83o.pptx',
+	placeholder: 'https://via.placeholder.com/400/0096FF/FFFFFF?text=%20',
+	filename: 'a55_presentation.pptx',
+	alt: 'Template de apresentação em powerpoint',
+	classlist: 'item ppt'
+}, {
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/MODELO+APRESENTAC%CC%A7A%CC%83O/A55_Modelo+de+Apresentac%CC%A7a%CC%83o.key',
+	placeholder: 'https://via.placeholder.com/400/0096FF/FFFFFF?text=%20',
+	filename: 'a55_presentation.key',
+	alt: 'Template de apresentação em keynote',
+	classlist: 'item key'
+}, {
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/I%CC%81CONE+E+LOGO/LOGO/A55_AZUL.png',
+	filename: 'A55_AZUL.png',
+	alt: 'A55 Logo',
 	classlist: 'item'
 }, {
-	src: 'https://cdn-a55.s3-sa-east-1.amazonaws.com/apple-touch-icon.png',
-	filename: 'icone-a55.png',
-	alt: 'Ícone A55',
-	classlist: 'item'
-}, {
-	src: 'https://cdn-a55.s3-sa-east-1.amazonaws.com/a55_icone.svg',
-	filename: 'icone-a55.svg',
-	alt: 'Ícone A55 (.svg)',
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/I%CC%81CONE+E+LOGO/LOGO/A55_AZUL.svg',
+	filename: 'A55_AZUL.svg',
+	alt: 'A55 Logo (.svg)',
 	classlist: 'item svg'
 }, {
-	src: 'https://cdn-a55.s3-sa-east-1.amazonaws.com/a55_icone_branco.svg',
-	filename: 'icone-branco-a55.svg',
-	alt: 'Ícone Branco A55 (.svg)',
-	classlist: 'item svg alt'
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/I%CC%81CONE+E+LOGO/LOGO/A55_BRANCO.png',
+	filename: 'A55_BRANCO.png',
+	alt: 'A55 Logo Branco',
+	classlist: 'item alt'
 }, {
-	src: 'https://cdn-a55.s3-sa-east-1.amazonaws.com/favicon-pack.zip',
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/I%CC%81CONE+E+LOGO/LOGO/A55_BRANCO.svg',
+	filename: 'A55_BRANCO.svg',
+	alt: 'A55 Logo Branco (.svg)',
+	classlist: 'item alt svg'
+}, {
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/I%CC%81CONE+E+LOGO/LOGO/A55_PRETO.png',
+	filename: 'A55_PRETO.png',
+	alt: 'A55 Logo Preto',
+	classlist: 'item'
+}, {
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/I%CC%81CONE+E+LOGO/LOGO/A55_PRETO.svg',
+	filename: 'A55_PRETO.svg',
+	alt: 'A55 Logo Preto (.svg)',
+	classlist: 'item svg'
+}, {
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/I%CC%81CONE+E+LOGO/I%CC%81CONE/I%CC%81CONE_AZUL.png',
+	filename: 'A55_ICONE_AZUL.png',
+	alt: 'A55 Ícone',
+	classlist: 'item'
+}, {
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/I%CC%81CONE+E+LOGO/I%CC%81CONE/I%CC%81CONE_AZUL.svg',
+	filename: 'A55_ICONE_AZUL.svg',
+	alt: 'A55 Ícone (.svg)',
+	classlist: 'item svg'
+}, {
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/I%CC%81CONE+E+LOGO/I%CC%81CONE/I%CC%81CONE_BRANCO.png',
+	filename: 'A55_ICONE_BRANCO.png',
+	alt: 'A55 Ícone Branco',
+	classlist: 'item alt'
+}, {
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/I%CC%81CONE+E+LOGO/I%CC%81CONE/I%CC%81CONE_BRANCO.svg',
+	filename: 'A55_ICONE_BRANCO.svg',
+	alt: 'A55 Ícone Branco (.svg)',
+	classlist: 'item alt svg'
+}, {
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/I%CC%81CONE+E+LOGO/I%CC%81CONE/I%CC%81CONE_PRETO.png',
+	filename: 'A55_ICONE_PRETO.png',
+	alt: 'A55 Ícone Preto',
+	classlist: 'item'
+}, {
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/I%CC%81CONE+E+LOGO/I%CC%81CONE/I%CC%81CONE_PRETO.svg',
+	filename: 'A55_ICONE_PRETO.svg',
+	alt: 'A55 Ícone Preto (.svg)',
+	classlist: 'item svg'
+}, {
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/favicon.zip',
 	placeholder: 'https://via.placeholder.com/400/0096FF/FFFFFF?text=%20',
 	filename: 'favicon.zip',
 	alt: 'Pacote de favicons',
 	classlist: 'item fav'
 }];
 
-const colors = [
+const palette = [
 	{ name: 'primary', hex: '#0096FF', color: 'white' },
-	{ name: 'secondary', hex: '#1262FF', color: 'white' },
-	{ name: 'error', hex: '#FB0D1B', color: 'black' },
-	{ name: 'success', hex: '#35D110', color: 'white' },
-	{ name: 'warning', hex: '#FFCC00', color: 'black' },
-	{ name: 'grey1', hex: '#333132', color: 'white' },
-	{ name: 'grey2', hex: '#58595B', color: 'white' },
-	{ name: 'grey3', hex: '#8A8C8E', color: 'black' },
-	{ name: 'grey4', hex: '#DCDDDE', color: 'black' },
-	{ name: 'grey5', hex: '#F1F2F2', color: 'black' }
+	{ name: 'gradient-1', hex: '#3CCCDA', color: 'white' },
+	{ name: 'gradient-2', hex: '#1262FF', color: 'white' },
+	{ name: 'primary-light-1', hex: '#53a8ff', color: 'white' },
+	{ name: 'primary-light-2', hex: '#66b1ff', color: 'white' },
+	{ name: 'primary-light-3', hex: '#79bbff', color: 'black' },
+	{ name: 'primary-light-4', hex: '#8cc5ff', color: 'black' },
+	{ name: 'primary-light-5', hex: '#a0cfff', color: 'black' },
+	{ name: 'primary-light-6', hex: '#b3d8ff', color: 'black' },
+	{ name: 'primary-light-7', hex: '#c6e2ff', color: 'black' },
+	{ name: 'primary-light-8', hex: '#d9ecff', color: 'black' },
+	{ name: 'primary-light-9', hex: '#ecf5ff', color: 'black' },
+	{ name: 'success', hex: '#67C23A', color: 'white' },
+	{ name: 'warning', hex: '#E6A23C', color: 'black' },
+	{ name: 'danger', hex: '#F56C6C', color: 'black' },
+	{ name: 'info', hex: '#909399', color: 'black' },
+	{ name: 'color-text-primary', hex: '#303133', color: 'white' },
+	{ name: 'color-text-regular', hex: '#606266', color: 'white' },
+	{ name: 'color-text-secondary', hex:'#909399', color: 'black' },
+	{ name: 'color-text-placeholder', hex: '#C0C4CC', color: 'black' },
+	{ name: 'border-color-base', hex: '#DCDFE6', color: 'black' },
+	{ name: 'border-color-light', hex: '#E4E7ED', color: 'black' },
+	{ name: 'border-color-lighter', hex: '#EBEEF5', color: 'black' },
+	{ name: 'border-color-extra-light', hex: '#F2F6FC', color: 'black' },
+	{ name: 'background-color-base', hex: '#F5F7FA', color: 'black' },
 ];
 
 const typography = [{
 	name: 'Open Sans',
 	href: 'https://fonts.google.com/specimen/Open+Sans',
 	desc: 'titles'
-}, {
-	name: 'Roboto',
-	href: 'https://fonts.google.com/specimen/Roboto',
-	desc: 'copy'
 }];
 
-const icons = [{
+const ui_icons = [{
 	name: 'Element UI',
-	purpose: 'uso geral',
+	purpose: 'general ui use',
 	source: 'https://element.eleme.io/#/en-US/component/icon'
 }, {
 	name: 'Material Design',
-	purpose: 'menu de navegação',
+	purpose: 'navigation menu',
 	source: 'https://material.io/resources/icons/?style=baseline'
 }];
 
-const domains = [{
+
+const resources = [{
 	name: 'Site Institucional',
 	gifs: '',
 	domain: 'https://a55.tech'
@@ -102,16 +166,16 @@ const domains = [{
 }, {
 	name: 'Assinatura de email',
 	gifs: '',
-	domain: 'https://access55.github.io/email-signature'
+	domain: 'https://email-signature.a55.tech'
 }];
 
 const props = {
-	menu,
-	images,
-	colors,
+	nav,
+	media,
+	palette,
 	typography,
-	icons,
-	domains
+	ui_icons,
+	resources
 };
 
 const app = new App({

@@ -29,6 +29,8 @@
 	nav > a {
 		flex: 0 80px;
 		height: 32px;
+		width: 80px;
+		text-align: center;
 		margin-right: 4px;
 		color: transparent;
 		background-repeat: no-repeat;

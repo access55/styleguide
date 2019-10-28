@@ -4,14 +4,13 @@
 	--primary: #0096FF;
 	--secondary: #1262FF;
 	--grey1: #333132;
-	--grey2: #58595B;
-	--grey3: #8A8C8E;
-	--grey4: #DCDDDE;
-	--grey5: #F1F2F2;
-	--cyan1: #00E9FF;
-	--error: #FB0D1B;
-	--success: #35D110;
-	--warning: #FFCC00;
+	--grey2: #606266;
+	--grey3: #909399;
+	--grey4: #C0C4CC;
+	--grey5: #DCDFE6;
+	--error: #F56C6C;
+	--success: #67C23A;
+	--warning: #E6A23C;
 }
 
 body {

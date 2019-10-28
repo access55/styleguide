@@ -29,17 +29,47 @@
 	}
 
 	.images > .item.alt,
-	.images > .item.fav {
+	.images > .item.fav,
+	.images > .item.ppt,
+	.images > .item.key {
 		background: var(--primary);
 	}
 
-	.images > .item.fav {
+	.images > .item.fav,
+	.images > .item.ppt,
+	.images > .item.key {
 		padding: 0;
 	}
 
 	.images > .item.fav::after {
 		color: #fff;
 		content: 'favicons';
+		font-size: 12px;
+		font-weight: bold;
+		left: 50%;
+		letter-spacing: 1px;
+		position: absolute;
+		text-align: center;
+		text-transform: uppercase;
+		transform: translate(-50%, 0);
+	}
+
+	.images > .item.key::after {
+		color: #fff;
+		content: 'template keynote';
+		font-size: 12px;
+		font-weight: bold;
+		left: 50%;
+		letter-spacing: 1px;
+		position: absolute;
+		text-align: center;
+		text-transform: uppercase;
+		transform: translate(-50%, 0);
+	}
+
+	.images > .item.ppt::after {
+		color: #fff;
+		content: 'template powerpoint';
 		font-size: 12px;
 		font-weight: bold;
 		left: 50%;

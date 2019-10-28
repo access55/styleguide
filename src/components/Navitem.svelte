@@ -27,7 +27,9 @@
 
 <style>
 	li {
-		flex: 1;
+		flex: 0 auto;
+		padding: 0 10px;
+		text-align: center;
 	}
 
 	li > a {

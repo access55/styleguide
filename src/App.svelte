@@ -73,7 +73,7 @@
 <div class="styleguide">
  	<Nav
 	 	website={resources[0].domain}
-	 	logo={media[3].src}>
+	 	logo={media[5].src}>
 	 	{#each nav as navitem}
 			<Navitem
 				path={navitem.target}>

@@ -3496,7 +3496,7 @@ var app = (function () {
     	return block;
     }
 
-    // (74:2) <Nav    website={resources[0].domain}    logo={media[3].src}>
+    // (74:2) <Nav    website={resources[0].domain}    logo={media[5].src}>
     function create_default_slot_1(ctx) {
     	var each_1_anchor, current;
 
@@ -3583,7 +3583,7 @@ var app = (function () {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_default_slot_1.name, type: "slot", source: "(74:2) <Nav    website={resources[0].domain}    logo={media[3].src}>", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_default_slot_1.name, type: "slot", source: "(74:2) <Nav    website={resources[0].domain}    logo={media[5].src}>", ctx });
     	return block;
     }
 
@@ -3722,7 +3722,7 @@ var app = (function () {
     	var nav_1 = new Nav({
     		props: {
     		website: ctx.resources[0].domain,
-    		logo: ctx.media[3].src,
+    		logo: ctx.media[5].src,
     		$$slots: { default: [create_default_slot_1] },
     		$$scope: { ctx }
     	},
@@ -3777,7 +3777,7 @@ var app = (function () {
     		p: function update(changed, ctx) {
     			var nav_1_changes = {};
     			if (changed.resources) nav_1_changes.website = ctx.resources[0].domain;
-    			if (changed.media) nav_1_changes.logo = ctx.media[3].src;
+    			if (changed.media) nav_1_changes.logo = ctx.media[5].src;
     			if (changed.$$scope || changed.nav) nav_1_changes.$$scope = { changed, ctx };
     			nav_1.$set(nav_1_changes);
 

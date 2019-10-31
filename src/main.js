@@ -132,7 +132,7 @@ const typography = [{
 	desc: 'titles'
 }, {
     	name: 'Avenir',
-	href: 'https://fonts.google.com/?query=Avenir',
+	href: 'https://fonts.google.com/specimen/Open+Sans',
 	desc: 'Business Card Font'	
 }];
 

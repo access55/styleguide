@@ -96,6 +96,12 @@ const media = [{
 	filename: 'favicon.zip',
 	alt: 'Pacote de favicons',
 	classlist: 'item fav'
+}, {
+	src: 'https://a55-cdn.s3-sa-east-1.amazonaws.com/e-ui.zip',
+	placeholder: 'https://via.placeholder.com/400/0096FF/FFFFFF?text=%20',
+	filename: 'e-ui.zip',
+	alt: 'Element-UI Kit - XD',
+	classlist: 'item xd'
 }];
 
 const palette = [
@@ -133,7 +139,7 @@ const typography = [{
 }, {
     	name: 'Avenir',
 	href: 'https://fonts.google.com/?query=Avenir',
-	desc: 'Business Card Font'	
+	desc: 'Business Card Font'
 }];
 
 const ui_icons = [{

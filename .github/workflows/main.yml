@@ -1,4 +1,4 @@
-name: Deploy  Pipe
+name: Deploy Pipe
 
 on:
   push:

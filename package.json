@@ -3,20 +3,20 @@
   "version": "1.1.0",
   "devDependencies": {
     "npm-run-all": "^4.1.5",
-    "rollup": "^1.12.0",
-    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup": "^1.31.1",
+    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-livereload": "^1.0.4",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-svelte": "^5.0.3",
-    "rollup-plugin-terser": "^4.0.4",
+    "rollup-plugin-svelte": "^5.1.1",
+    "rollup-plugin-terser": "^5.2.0",
     "s3-deploy": "^1.4.0",
-    "svelte": "^3.0.0"
+    "svelte": "^3.18.2"
   },
   "dependencies": {
     "clipboard": "^2.0.4",
     "file-saver": "^2.0.2",
-    "sirv-cli": "^0.4.4"
+    "sirv-cli": "^0.4.5"
   },
   "scripts": {
     "build": "rollup -c",

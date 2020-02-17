@@ -29,6 +29,7 @@
 	}
 
 	.images > .item.alt,
+	.images > .item.xd,
 	.images > .item.fav,
 	.images > .item.ppt,
 	.images > .item.key {
@@ -37,6 +38,7 @@
 
 	.images > .item.fav,
 	.images > .item.ppt,
+	.images > .item.xd,
 	.images > .item.key {
 		padding: 0;
 	}
@@ -70,6 +72,19 @@
 	.images > .item.ppt::after {
 		color: #fff;
 		content: 'template powerpoint';
+		font-size: 12px;
+		font-weight: bold;
+		left: 50%;
+		letter-spacing: 1px;
+		position: absolute;
+		text-align: center;
+		text-transform: uppercase;
+		transform: translate(-50%, 0);
+	}
+
+	.images > .item.xd::after {
+		color: #fff;
+		content: 'XD Kit';
 		font-size: 12px;
 		font-weight: bold;
 		left: 50%;
